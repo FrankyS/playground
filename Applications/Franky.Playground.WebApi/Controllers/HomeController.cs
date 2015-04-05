@@ -4,9 +4,19 @@
 
 	public class HomeController : Controller
 	{
-		public ActionResult Index()
+		public ViewResult Index()
 		{
 			return this.View();
+		}
+
+		public PartialViewResult Dashboard()
+		{
+			return this.PartialView();
+		}
+
+		public PartialViewResult About()
+		{
+			return this.PartialView();
 		}
 	}
 }

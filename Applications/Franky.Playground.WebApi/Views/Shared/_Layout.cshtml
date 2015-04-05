@@ -1,29 +1,29 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="mainApp">
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width" />
-	<title>@ViewBag.Title</title>
+	<title ng-bind="$state.current.data.pageTitle + ' - Playground'">Playground</title>
+	<base href="/" />
 	@Styles.Render("~/Content/css")
 	@Scripts.Render("~/bundles/modernizr")
-	<script src="~/Scripts/angular.min.js"></script>
-	<script src="~/Scripts/angular-resource.min.js"></script>
-	<script src="~/Scripts/app/app.js"></script>
-	<script src="~/Scripts/app/ItemControllers.js"></script>
-	<script src="~/Scripts/app/ItemServices.js"></script>
+	@Scripts.Render("~/bundles/angular")
+	@Scripts.Render("~/bundles/app")
 </head>
-<body ng-app="mainApp">
+<body>
 	<header>
 		<div class="content-wrapper">
 			<div class="float-left">
 				<p class="site-title">
-					<a href="~/">ASP.NET Web API</a></p>
+					<a ui-sref="dashboard">Franky's Playground</a>
+				</p>
 			</div>
 			<div class="float-right">
 				<nav>
 					<ul id="menu">
-						<li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-						<li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
+						<li><a ui-sref="dashboard">UI Dashboard</a></li>
+						<li><a ui-sref="about">UI About</a></li>
+						<li><a ui-sref="item.list">UI Item</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -31,7 +31,6 @@
 	</header>
 	@RenderBody()
 
-	@Scripts.Render("~/bundles/jquery")
 	@RenderSection("scripts", required: false)
 </body>
 </html>

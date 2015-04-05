@@ -1,8 +1,5 @@
-﻿<div id="body" ng-controller="itemListController">
-	<section class="content-wrapper main-content clear-fix">
-		<div ng-repeat="item in items">
-			<label>{{item.id}}</label>
-			<input type="text" value="{{item.name}}" />
-		</div>
+﻿<div id="body">
+	<section class="content-wrapper main-content clear-fix ui-view-container">
+		<div ui-view></div>
 	</section>
 </div>

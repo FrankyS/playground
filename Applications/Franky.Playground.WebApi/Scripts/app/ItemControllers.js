@@ -1,6 +1,49 @@
-﻿var itemControllers = angular.module('itemControllers', []);
+﻿'use strict';
 
-itemControllers.controller('itemListController', ['$scope', 'Items', function($scope, Items) {
-	var items = [{ id: 1, name: 'Item1' }, { id: 2, name: 'Item2' }];
-	$scope.items = items;
-}]);
+var itemControllers = angular.module('itemControllers', []);
+
+itemControllers.config([
+	'$stateProvider',
+	function ($stateProvider) {
+		$stateProvider
+			.state('item', {
+				url: '/Items',
+				abstract: true,
+				template: '<div ui-view></div>',
+				data: { pageTitle: 'Items' }
+			})
+
+			.state('item.list', {
+				url: '',
+				templateUrl: '/Item/List',
+				controller: 'itemListController',
+			})	
+	
+			.state('item.detail', {
+				url: '/Detail/:id',
+				templateUrl: '/Item/Detail',
+				controller: 'itemDetailController'
+			});
+	}
+]);
+
+itemControllers.controller('itemListController', [
+	'$scope',
+	'Items',
+	function ($scope, Items) {
+		Items.query(function(items) {
+			$scope.items = items;
+		});
+	}
+]);
+
+itemControllers.controller('itemDetailController', [
+	'$scope',
+	'$stateParams',
+	'Items',
+	function ($scope, $stateParams, Items) {
+		Items.get({ id: $stateParams.id }, function(item) {
+			$scope.item = item;
+		});
+	}
+]);

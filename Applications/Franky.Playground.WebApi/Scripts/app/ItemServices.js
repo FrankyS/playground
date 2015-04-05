@@ -1,8 +1,10 @@
-﻿var itemServices = angular.module('itemServices', ['ngResource']);
+﻿'use strict';
 
-itemServices.factory('Items', ['$resource',
+var itemServices = angular.module('itemServices', ['ngResource']);
+
+itemServices.factory('Items', [
+	'$resource',
 	function ($resource) {
-		return $resource('/api/values', {}, {
-			query: { method: 'GET', params: {}, isArray: true }
-		});
-	}]);
+		return $resource('/api/values/:id');
+	}
+]);

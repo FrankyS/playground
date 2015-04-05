@@ -2,28 +2,29 @@
 {
 	using System.Collections.Generic;
 	using System.Web.Http;
+	using Franky.Playground.WebApi.Models;
 
 	public class ValuesController : ApiController
 	{
 		// GET api/values
-		public IEnumerable<string> Get()
+		public IEnumerable<ValueModel> Get()
 		{
-			return new[] { "value1", "value2" };
+			return new[] { new ValueModel(1, "Value 1"), new ValueModel(2, "Value 2") };
 		}
 
 		// GET api/values/5
-		public string Get(int id)
+		public ValueModel Get(int id)
 		{
-			return "value";
+			return new ValueModel(id, "Value " + id);
 		}
 
 		// POST api/values
-		public void Post([FromBody]string value)
+		public void Post(ValueModel value)
 		{
 		}
 
 		// PUT api/values/5
-		public void Put(int id, [FromBody]string value)
+		public void Put(int id, ValueModel value)
 		{
 		}
 
