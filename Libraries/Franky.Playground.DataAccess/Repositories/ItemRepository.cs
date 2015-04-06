@@ -13,7 +13,29 @@
 
 		public IEnumerable<Item> GetAll()
 		{
-			return this.context.Items.ToList();
+			return this.context.Items
+				.ToList();
+		}
+
+		public IEnumerable<Item> GetFiltered(int skip, int take, string order, string filter)
+		{
+			IQueryable<Item> queryable = this.context.Items;
+
+			if (!string.IsNullOrEmpty(filter))
+			{
+				queryable = queryable.Where(x => x.Name.Contains(filter));
+			}
+
+			queryable = string.Equals(order, "asc")
+				? queryable.OrderBy(x => x.Id)
+				: queryable.OrderByDescending(x => x.Id);
+			
+			queryable = queryable
+				.Skip(skip)
+				.Take(take);
+
+			return queryable
+				.ToList();
 		}
 
 		public Item GetById(long id)

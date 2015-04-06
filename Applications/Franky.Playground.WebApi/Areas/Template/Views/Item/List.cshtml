@@ -3,3 +3,54 @@
 		<li title="{{item.id}}"><a ui-sref="item.detail({id: item.id})">{{item.name}}</a></li>
 	</ul>
 </div>
+
+<div>
+	<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Rights</th>
+				<th>DateTime</th>
+				@*<th></th>*@
+			</tr>
+		</thead>
+ 
+		<tfoot>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Rights</th>
+				<th>DateTime</th>
+				@*<th></th>*@
+			</tr>
+		</tfoot>
+	</table>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		//$('#example thead th').each(function () {
+		//	var title = $('#example thead th').eq($(this).index()).text();
+		//	$(this).html('title<input type="text" placeholder="Search ' + title + '" />');
+		//});
+		
+		$('#example').dataTable({
+			'ajax': {
+				'url': 'Data/Item',
+				'dataSrc': ''
+			},
+			'processing': true,
+			'serverSide': true,
+			'columns': [
+				{ 'data': 'id' },
+				{ 'data': 'name' },
+				{ 'data': 'type' },
+				{ 'data': 'rights' },
+				{ 'data': 'dateTime' }
+			]
+		});
+	});
+</script>

@@ -31,6 +31,8 @@ itemControllers.controller('itemListController', [
 	'$scope',
 	'Items',
 	function ($scope, Items) {
+		$scope.items = [{ id: 1, name: "Test", type: 0 }];
+		return;
 		Items.query(function(items) {
 			$scope.items = items;
 		});

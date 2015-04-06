@@ -8,6 +8,7 @@
 	using Franky.Playground.DataAccess.Entities;
 	using Franky.Playground.DataAccess.Repositories;
 	using Franky.Playground.Models.Item;
+	using Franky.Playground.WebApi.Areas.Template.Models;
 
 	public class ItemController : ApiController
 	{
@@ -19,9 +20,18 @@
 		}
 
 		// GET api/values
-		public IEnumerable<ItemModel> Get()
+		public IEnumerable<ItemModel> Get([FromUri] DataTablesModel dataTablesModel)
 		{
-			IEnumerable<Item> items = this.itemRepository.GetAll();
+			IEnumerable<Item> items;
+			if (dataTablesModel != null && dataTablesModel.Order != null)
+			{
+				items = this.itemRepository.GetFiltered(dataTablesModel.Start, dataTablesModel.Length,
+					dataTablesModel.Order[0].Dir, dataTablesModel.Search.Value);
+			}
+			else
+			{
+				items = this.itemRepository.GetAll();
+			}
 
 			return items.Select(x => ToModel(x));
 		}
