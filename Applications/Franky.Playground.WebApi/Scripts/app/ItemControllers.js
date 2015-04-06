@@ -7,7 +7,7 @@ itemControllers.config([
 	function ($stateProvider) {
 		$stateProvider
 			.state('item', {
-				url: '/Items',
+				url: '/Item',
 				abstract: true,
 				template: '<div ui-view></div>',
 				data: { pageTitle: 'Items' }
@@ -15,13 +15,13 @@ itemControllers.config([
 
 			.state('item.list', {
 				url: '',
-				templateUrl: '/Item/List',
+				templateUrl: 'Template/Item/List',
 				controller: 'itemListController',
 			})	
 	
 			.state('item.detail', {
 				url: '/Detail/:id',
-				templateUrl: '/Item/Detail',
+				templateUrl: 'Template/Item/Detail',
 				controller: 'itemDetailController'
 			});
 	}

@@ -8,15 +8,5 @@
 		{
 			return this.View();
 		}
-
-		public PartialViewResult Dashboard()
-		{
-			return this.PartialView();
-		}
-
-		public PartialViewResult About()
-		{
-			return this.PartialView();
-		}
 	}
 }

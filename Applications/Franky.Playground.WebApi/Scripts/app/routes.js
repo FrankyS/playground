@@ -10,18 +10,18 @@ mainApp.config([
 		$stateProvider
 			.state('dashboard', {
 				url: '/',
-				templateUrl: '/Home/Dashboard',
+				templateUrl: 'Template/Home/Dashboard',
 				data: { pageTitle: 'Dashboard' }
 			})
 
 			.state('about', {
 				url: '/About',
-				templateUrl: '/Home/About',
+				templateUrl: 'Template/Home/About',
 				data: { pageTitle: 'About' }
 			});
 
 		// use the HTML5 History API
 		// currently kills the reload feature :-)
-		// $locationProvider.html5Mode(true);
+		$locationProvider.html5Mode(true);
 	}
 ]);

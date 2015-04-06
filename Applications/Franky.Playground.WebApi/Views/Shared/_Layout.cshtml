@@ -4,7 +4,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width" />
 	<title ng-bind="$state.current.data.pageTitle + ' - Playground'">Playground</title>
-	<base href="/" />
+	<base href="@Url.Action("Index", "Home")" />
 	@Styles.Render("~/Content/css")
 	@Scripts.Render("~/bundles/modernizr")
 	@Scripts.Render("~/bundles/angular")

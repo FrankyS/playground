@@ -1,4 +1,4 @@
-﻿namespace Franky.Playground.WebApi.Controllers
+﻿namespace Franky.Playground.WebApi.Areas.Template.Controllers
 {
 	using System.Web.Mvc;
 

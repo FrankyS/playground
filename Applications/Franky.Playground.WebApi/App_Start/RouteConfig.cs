@@ -12,7 +12,9 @@
 			routes.MapRoute(
 				name: "Default",
 				url: "{controller}/{action}/{id}",
-				defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional });
+				defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+				constraints: new { controller = "Home", action = "Index" },
+				namespaces: new string[] { "Franky.Playground.WebApi.Controllers" });
 		}
 	}
 }
