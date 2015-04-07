@@ -1,6 +1,7 @@
 ﻿namespace Franky.Playground.DataAccess.Repositories
 {
 	using System.Collections.Generic;
+	using System.Data.Entity;
 	using System.Data.Entity.Infrastructure;
 	using System.Linq;
 	using Franky.Playground.DataAccess.Entities;
@@ -20,7 +21,7 @@
 		public IEnumerable<Item> GetFiltered(int skip, int take, string order, string filter)
 		{
 			IQueryable<Item> queryable = this.context.Items;
-
+			
 			if (!string.IsNullOrEmpty(filter))
 			{
 				queryable = queryable.Where(x => x.Name.Contains(filter));

@@ -3,13 +3,14 @@ namespace Franky.Playground.DataAccess
 	using System;
 	using System.Data.Entity;
 	using System.Linq;
+	using Franky.Playground.DataAccess.Conventions;
 	using Franky.Playground.DataAccess.Entities;
 	using log4net;
 
 	public class PlaygroundContext : DbContext
 	{
 		private static readonly ILog logger = LogManager.GetLogger(typeof(PlaygroundContext));
-		private static readonly string[] prefixToIgnore = new string[] { "-- p__linq__0", "-- Executing at" };
+		private static readonly string[] prefixToIgnore = { "-- p__linq__0", "-- Executing at" };
 
 		private readonly Guid guid = Guid.NewGuid();
 
@@ -20,6 +21,11 @@ namespace Franky.Playground.DataAccess
 		}
 
 		public DbSet<Item> Items { get; set; }
+
+		protected override void OnModelCreating(DbModelBuilder modelBuilder)
+		{
+			modelBuilder.Conventions.Add(new DateTimeConvention());
+		}
 
 		private static void LogMessage(string message, Guid guid)
 		{

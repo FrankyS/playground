@@ -49,13 +49,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conventions\DateTimeConvention.cs" />
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\Item.cs" />
-    <Compile Include="PlaygroundContext.cs" />
-    <Compile Include="Migrations\201504060950565_ItemInitial.cs" />
-    <Compile Include="Migrations\201504060950565_ItemInitial.Designer.cs">
-      <DependentUpon>201504060950565_ItemInitial.cs</DependentUpon>
+    <Compile Include="Migrations\201504071038364_ItemInitial.cs" />
+    <Compile Include="Migrations\201504071038364_ItemInitial.Designer.cs">
+      <DependentUpon>201504071038364_ItemInitial.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlaygroundContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ItemRepository.cs" />
@@ -71,11 +72,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201504060950565_ItemInitial.resx">
-      <DependentUpon>201504060950565_ItemInitial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201504071038364_ItemInitial.resx">
+      <DependentUpon>201504071038364_ItemInitial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
