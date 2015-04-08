@@ -18,13 +18,15 @@
 					url: '',
 					templateUrl: 'Template/Item/List',
 					controller: 'itemListController',
+					controllerAs: 'itemListCtrl'
 				})
 
 				.state('item.detail', {
 					url: '/Detail/:id',
 					templateUrl: 'Template/Item/Detail',
-					controller: 'itemDetailController'
-				});
+					controller: 'itemDetailController',
+					controllerAs: 'itemDetailCtrl'
+			});
 		}
 	]);
 
@@ -32,10 +34,12 @@
 		'$scope',
 		'Items',
 		function ($scope, Items) {
-			$scope.items = [{ id: 1, name: "Test", type: 0 }];
+			var vm = this;
+
+			vm.items = [{ id: 1, name: "Test", type: 0 }];
 			return;
 			Items.query(function (items) {
-				$scope.items = items;
+				vm.items = items;
 			});
 		}
 	]);
@@ -45,8 +49,9 @@
 		'$stateParams',
 		'Items',
 		function ($scope, $stateParams, Items) {
+			var vm = this;
 			Items.get({ id: $stateParams.id }, function (item) {
-				$scope.item = item;
+				vm.item = item;
 			});
 		}
 	]);
