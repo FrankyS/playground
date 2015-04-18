@@ -16,7 +16,7 @@ namespace Franky.Playground.DataAccess.Migrations
 
 		protected override void Seed(PlaygroundContext context)
 		{
-			const int Amount = 100000;
+			const int Amount = 10000;
 			const int BatchSize = 1000;
 
 			List<Item> items = GetItems(Amount);

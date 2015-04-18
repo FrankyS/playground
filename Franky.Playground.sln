@@ -17,6 +17,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Franky.Playground.Constants
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Franky.Playground.DataAccess", "Libraries\Franky.Playground.DataAccess\Franky.Playground.DataAccess.csproj", "{C4C74DDC-1A89-4E17-8450-60EB7F95E295}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Features", "Features", "{88B1ECBA-656E-4DDF-8AFF-7248DBF57BD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Franky.Playground.Weather", "Features\Franky.Playground.Weather\Franky.Playground.Weather.csproj", "{D59473B0-A256-411A-BDD1-CB8242BBCD0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Franky.Playground.WeatherTests", "Tests\Franky.Playground.WeatherTests\Franky.Playground.WeatherTests.csproj", "{0A2938CA-B6B6-41D7-9884-63B1FC60C9A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Franky.Playground.BaseTests", "Tests\Franky.Playground.BaseTests\Franky.Playground.BaseTests.csproj", "{A93054E2-FEBC-40E9-8E47-7A87DFDE9680}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +51,18 @@ Global
 		{C4C74DDC-1A89-4E17-8450-60EB7F95E295}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4C74DDC-1A89-4E17-8450-60EB7F95E295}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4C74DDC-1A89-4E17-8450-60EB7F95E295}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D59473B0-A256-411A-BDD1-CB8242BBCD0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D59473B0-A256-411A-BDD1-CB8242BBCD0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D59473B0-A256-411A-BDD1-CB8242BBCD0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D59473B0-A256-411A-BDD1-CB8242BBCD0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A2938CA-B6B6-41D7-9884-63B1FC60C9A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A2938CA-B6B6-41D7-9884-63B1FC60C9A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A2938CA-B6B6-41D7-9884-63B1FC60C9A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A2938CA-B6B6-41D7-9884-63B1FC60C9A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A93054E2-FEBC-40E9-8E47-7A87DFDE9680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A93054E2-FEBC-40E9-8E47-7A87DFDE9680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A93054E2-FEBC-40E9-8E47-7A87DFDE9680}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A93054E2-FEBC-40E9-8E47-7A87DFDE9680}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,5 +73,8 @@ Global
 		{749BF0B0-6C25-43AC-8565-3A9012406EFB} = {18100F75-99E4-4683-9DBC-E80E3FC82CB6}
 		{D310FF0E-32C7-41B4-9854-4EF799921961} = {18100F75-99E4-4683-9DBC-E80E3FC82CB6}
 		{C4C74DDC-1A89-4E17-8450-60EB7F95E295} = {18100F75-99E4-4683-9DBC-E80E3FC82CB6}
+		{0A2938CA-B6B6-41D7-9884-63B1FC60C9A3} = {4B5AE747-660F-4624-9B8F-7E210CBF6ACD}
+		{A93054E2-FEBC-40E9-8E47-7A87DFDE9680} = {4B5AE747-660F-4624-9B8F-7E210CBF6ACD}
+		{D59473B0-A256-411A-BDD1-CB8242BBCD0D} = {88B1ECBA-656E-4DDF-8AFF-7248DBF57BD4}
 	EndGlobalSection
 EndGlobal

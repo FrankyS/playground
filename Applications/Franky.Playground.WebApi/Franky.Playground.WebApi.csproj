@@ -146,6 +146,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Data\Controllers\ItemController.cs" />
+    <Compile Include="Areas\Data\Controllers\WeatherController.cs" />
     <Compile Include="Areas\Data\DataAreaRegistration.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
     <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
@@ -161,6 +162,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Areas\Template\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Template\Controllers\HomeController.cs" />
     <Compile Include="Areas\Template\Models\DataTablesModel.cs" />
     <Compile Include="Areas\Template\TemplateAreaRegistration.cs" />
@@ -257,10 +259,16 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-mocks.js" />
-    <Content Include="Scripts\app\app.js" />
-    <Content Include="Scripts\app\itemControllers.js" />
-    <Content Include="Scripts\app\itemServices.js" />
-    <Content Include="Scripts\app\routes.js" />
+    <Content Include="Scripts\app\dashboard\dashboardModule.js" />
+    <Content Include="Scripts\app\dashboard\dashboardFactory.js" />
+    <Content Include="Scripts\app\dashboard\weatherController.js" />
+    <Content Include="Scripts\app\factoryModule.js" />
+    <Content Include="Scripts\app\item\itemDetailController.js" />
+    <Content Include="Scripts\app\item\itemListController.js" />
+    <Content Include="Scripts\app\mainModule.js" />
+    <Content Include="Scripts\app\item\itemModule.js" />
+    <Content Include="Scripts\app\item\itemFactory.js" />
+    <Content Include="Scripts\app\mainConfig.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -294,6 +302,9 @@
     <Content Include="Scripts\DataTables\dataTables.tableTools.min.js" />
     <Content Include="Scripts\DataTables\jquery.dataTables.js" />
     <Content Include="Scripts\DataTables\jquery.dataTables.min.js" />
+    <Content Include="Areas\Template\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\Template\Views\Dashboard\Weather.cshtml" />
+    <Content Include="Areas\Template\Views\Dashboard\Calendar.cshtml" />
     <None Include="Scripts\jquery-2.1.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.3.js" />
     <Content Include="Scripts\jquery-2.1.3.min.js" />
@@ -356,9 +367,10 @@
     <Content Include="Areas\Template\Views\Home\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Template\Views\Home\Dashboard.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\Franky.Playground.Base\Franky.Playground.Base.csproj">
+      <Project>{AC7293A6-A5FD-476B-9327-545CB233F3F5}</Project>
+      <Name>Franky.Playground.Base</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Libraries\Franky.Playground.Constants\Franky.Playground.Constants.csproj">
       <Project>{D310FF0E-32C7-41B4-9854-4EF799921961}</Project>
       <Name>Franky.Playground.Constants</Name>

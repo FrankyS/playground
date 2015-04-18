@@ -1,7 +1,7 @@
 ﻿(function () {
 	'use strict';
 
-	angular.module('mainApp').config([
+	angular.module('mainModule').config([
 		'$stateProvider',
 		'$urlRouterProvider',
 		'$locationProvider',
@@ -9,12 +9,6 @@
 			$urlRouterProvider.otherwise('/');
 
 			$stateProvider
-				.state('dashboard', {
-					url: '/',
-					templateUrl: 'Template/Home/Dashboard',
-					data: { pageTitle: 'Dashboard' }
-				})
-
 				.state('about', {
 					url: '/About',
 					templateUrl: 'Template/Home/About',

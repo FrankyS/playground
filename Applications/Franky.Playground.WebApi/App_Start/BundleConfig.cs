@@ -8,10 +8,17 @@
 		public static void RegisterBundles(BundleCollection bundles)
 		{
 			bundles.Add(new ScriptBundle("~/bundles/app").Include(
-				"~/Scripts/app/app.js",
-				"~/Scripts/app/Routes.js",
-				"~/Scripts/app/ItemControllers.js",
-				"~/Scripts/app/ItemServices.js"));
+				"~/Scripts/app/mainModule.js",
+				"~/Scripts/app/mainConfig.js",
+				"~/Scripts/app/factoryModule.js",
+				"~/Scripts/app/dashboard/dashboardModule.js",
+				"~/Scripts/app/dashboard/dashboardFactory.js",
+				"~/Scripts/app/dashboard/weatherController.js",
+				"~/Scripts/app/item/itemModule.js",
+				"~/Scripts/app/item/itemListController.js",
+				"~/Scripts/app/item/itemDetailController.js",
+				"~/Scripts/app/item/itemFactory.js"
+			));
 
 			bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
 				"~/Scripts/jQuery-{version}.js"));

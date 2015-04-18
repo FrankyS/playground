@@ -1,14 +1,15 @@
 (function () {
 	'use strict';
 
-	var mainApp = angular.module('mainApp', [
+	var mainModule = angular.module('mainModule', [
 		'ngAnimate',
 		'ui.router',
-		'itemControllers',
-		'itemServices'
+		'factoryModule',
+		'dashboardModule',
+		'itemModule'
 	]);
 
-	mainApp.run([
+	mainModule.run([
 		'$rootScope',
 		'$state',
 		'$stateParams',

@@ -39,11 +39,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dashboard\WeatherModel.cs" />
     <Compile Include="Item\ItemModel.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Franky.Playground.Base\Franky.Playground.Base.csproj">
+      <Project>{AC7293A6-A5FD-476B-9327-545CB233F3F5}</Project>
+      <Name>Franky.Playground.Base</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Franky.Playground.Constants\Franky.Playground.Constants.csproj">
       <Project>{D310FF0E-32C7-41B4-9854-4EF799921961}</Project>
       <Name>Franky.Playground.Constants</Name>

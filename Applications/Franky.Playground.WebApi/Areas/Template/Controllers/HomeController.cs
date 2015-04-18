@@ -4,11 +4,6 @@
 
 	public class HomeController : Controller
 	{
-		public PartialViewResult Dashboard()
-		{
-			return this.PartialView();
-		}
-
 		public PartialViewResult About()
 		{
 			return this.PartialView();
