@@ -1,7 +1,6 @@
 ﻿namespace Franky.Playground.DataAccess.Repositories
 {
 	using System.Collections.Generic;
-	using System.Data.Entity;
 	using System.Data.Entity.Infrastructure;
 	using System.Linq;
 	using Franky.Playground.DataAccess.Entities;
@@ -15,13 +14,14 @@
 		public IEnumerable<Item> GetAll()
 		{
 			return this.context.Items
+				.Take(50)
 				.ToList();
 		}
 
 		public IEnumerable<Item> GetFiltered(int skip, int take, string order, string filter)
 		{
 			IQueryable<Item> queryable = this.context.Items;
-			
+
 			if (!string.IsNullOrEmpty(filter))
 			{
 				queryable = queryable.Where(x => x.Name.Contains(filter));
@@ -30,7 +30,12 @@
 			queryable = string.Equals(order, "asc")
 				? queryable.OrderBy(x => x.Id)
 				: queryable.OrderByDescending(x => x.Id);
-			
+
+			if (take > 100)
+			{
+				take = 100;
+			}
+
 			queryable = queryable
 				.Skip(skip)
 				.Take(take);
@@ -81,9 +86,9 @@
 
 					status = DatabaseStatus.Success;
 				}
-				catch(DbUpdateException ex)
+				catch (DbUpdateException ex)
 				{
-					this.logger.Error(ex.Message, ex);	
+					this.logger.Error(ex.Message, ex);
 					status = DatabaseStatus.Failed;
 				}
 			}
@@ -104,7 +109,6 @@
 					this.context.SaveChanges();
 
 					status = DatabaseStatus.Success;
-
 				}
 				catch (DbUpdateException ex)
 				{
@@ -112,6 +116,7 @@
 					status = DatabaseStatus.Failed;
 				}
 			}
+
 			return status;
 		}
 	}
@@ -119,8 +124,8 @@
 	public enum DatabaseStatus
 	{
 		Success, 
-		
-		Failed,
+
+		Failed, 
 
 		NotFound
 	}

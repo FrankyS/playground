@@ -1,7 +1,55 @@
-﻿<h3>Detail:</h3>
-<label>{{itemDetailCtrl.item.id}}</label>
-<input type="text" value="{{itemDetailCtrl.item.name}}" />
-<input type="text" value="{{itemDetailCtrl.item.type}}" />
-<input type="text" value="{{itemDetailCtrl.item.rights}}" />
-<input type="text" value="{{itemDetailCtrl.item.dateTime}}" />
-<a ui-sref="item.list">Back</a>
+﻿@model Franky.Playground.Models.Item.ItemModel
+
+<h3>Item Details:</h3>
+<div class="container">
+	<div class="row form-group">
+		<div class="col-sm-3">
+			@Html.DisplayNameFor(x => x.Id)
+		</div>
+		<div class="col-sm-3">
+			<label>{{itemDetailCtrl.item.id}}</label>
+		</div>
+	</div>
+
+	<div class="row form-group">
+		<div class="col-sm-3">
+			@Html.DisplayNameFor(x => x.Name)
+		</div>
+		<div class="col-sm-3">
+			<input type="text" value="{{itemDetailCtrl.item.name}}" />
+		</div>
+	</div>
+
+	<div class="row form-group">
+		<div class="col-sm-3">
+			@Html.DisplayNameFor(x => x.Type)
+		</div>
+		<div class="col-sm-3">
+			<input type="text" value="{{itemDetailCtrl.item.type}}" />
+		</div>
+	</div>
+
+	<div class="row form-group">
+		<div class="col-sm-3">
+			@Html.DisplayNameFor(x => x.Rights)
+		</div>
+		<div class="col-sm-3">
+			<input type="text" value="{{itemDetailCtrl.item.rights}}" />
+		</div>
+	</div>
+
+	<div class="row form-group">
+		<div class="col-sm-3">
+			@Html.DisplayNameFor(x => x.DateTime)
+		</div>
+		<div class="col-sm-3">
+			<input type="text" value="{{itemDetailCtrl.item.dateTime}}" />
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-6">
+			<a ui-sref="item.list" class="pull-right">Back</a>
+		</div>
+	</div>
+</div>
