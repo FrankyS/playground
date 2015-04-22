@@ -16,7 +16,9 @@ namespace Franky.Playground.WebApi.Formatter
 	{
 		private static readonly JsonSerializerSettings settings = new JsonSerializerSettings
 			{
-#if !DEBUG
+#if DEBUG
+				Formatting = Formatting.Indented,
+#else
 				Formatting = Formatting.None,
 #endif
 				NullValueHandling = NullValueHandling.Ignore,
@@ -58,7 +60,7 @@ namespace Franky.Playground.WebApi.Formatter
 		{
 			Task task = Task.Factory.StartNew(() =>
 				{
-					string json = JsonConvert.SerializeObject(value, Formatting.Indented, settings);
+					string json = JsonConvert.SerializeObject(value, settings);
 
 					byte[] bytes = Encoding.Default.GetBytes(json);
 					writeStream.Write(bytes, 0, bytes.Length);
